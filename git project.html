@@ -3,6 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>My Simple Website</title>
+    <style>
+        /* Additional CSS styles */
+        .skill-bar {
+            width: 100%;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .skill-progress {
+            height: 20px;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+        }
+        .project-card {
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline-item {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            margin: 20px 0;
+            position: relative;
+        }
+        /* New styles */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #6e8efb;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
 </head>
 <body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;">
 
@@ -16,519 +78,245 @@
     <nav style="background-color: #444; padding: 10px; text-align: center;">
         <a href="#about" style="color: white; margin: 0 15px;">About</a>
         <a href="#projects" style="color: white; margin: 0 15px;">Projects</a>
+        <a href="#skills" style="color: white; margin: 0 15px;">Skills</a>
+        <a href="#experience" style="color: white; margin: 0 15px;">Experience</a>
+        <a href="#testimonials" style="color: white; margin: 0 15px;">Testimonials</a>
         <a href="#contact" style="color: white; margin: 0 15px;">Contact</a>
     </nav>
 
+    <!-- Hero Section -->
+    <section class="hero-section" style="color: white; padding: 120px 20px; text-align: center;">
+        <h1 style="font-size: 48px; margin-bottom: 10px; animation: fadeIn 1s ease-out;">Hi, I'm John Doe</h1>
+        <p style="font-size: 20px; margin-bottom: 30px; animation: fadeIn 1s ease-out 0.2s;">Web Developer | Designer | Freelancer</p>
+        <div style="margin-bottom: 30px; animation: fadeIn 1s ease-out 0.4s;">
+            <a href="#projects" style="background: white; color: #6e8efb; padding: 12px 24px; border-radius: 5px; text-decoration: none; margin: 0 10px;">View My Work</a>
+            <a href="#contact" style="background: transparent; color: white; padding: 12px 24px; border: 2px solid white; border-radius: 5px; text-decoration: none; margin: 0 10px;">Contact Me</a>
+        </div>
+    </section>
+
+    <!-- Services Section (New) -->
+    <section style="padding: 60px 20px; background-color: white;">
+        <h2 style="text-align: center;">My Services</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 40px auto;">
+            <div class="service-card animate" style="flex: 1; min-width: 280px;">
+                <div class="service-icon">💻</div>
+                <h3>Web Development</h3>
+                <p>Custom website development with modern technologies and best practices.</p>
+            </div>
+            <div class="service-card animate" style="flex: 1; min-width: 280px;">
+                <div class="service-icon">🎨</div>
+                <h3>UI/UX Design</h3>
+                <p>Beautiful and intuitive user interfaces that enhance user experience.</p>
+            </div>
+            <div class="service-card animate" style="flex: 1; min-width: 280px;">
+                <div class="service-icon">📱</div>
+                <h3>Mobile Development</h3>
+                <p>Cross-platform mobile applications that work seamlessly.</p>
+            </div>
+            <div class="service-card animate" style="flex: 1; min-width: 280px;">
+                <div class="service-icon">⚡</div>
+                <h3>Performance Optimization</h3>
+                <p>Speed optimization and performance improvements for existing websites.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
-    <section id="about" style="padding: 40px; background-color: white;">
-        <h2>About Me</h2>
-        <p>Hello! I'm a passionate developer who loves building simple and useful websites. This site is built using only HTML.</p>
-        <p>I enjoy turning ideas into reality and learning new technologies every day.</p>
+    <section id="about" style="padding: 60px 20px; background-color: white;">
+        <h2 style="text-align: center;">About Me</h2>
+        <div style="max-width: 800px; margin: 20px auto; text-align: center;">
+            <p style="margin-bottom: 20px;">
+                I'm a self-taught web developer with a passion for building responsive and engaging websites.
+                I specialize in front-end development, design, and performance optimization.
+            </p>
+            <p style="margin-bottom: 20px;">
+                With over 5 years of experience in web development, I've worked on various projects ranging from
+                small business websites to complex web applications. My goal is to create beautiful, functional,
+                and user-friendly websites that help businesses grow.
+            </p>
+            <p>
+                When I'm not coding, you can find me exploring new technologies, contributing to open-source
+                projects, or sharing my knowledge through technical writing and mentoring.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="padding: 60px 20px; background-color: #f0f0f0;">
+        <h2 style="text-align: center;">My Skills</h2>
+        <div style="max-width: 800px; margin: 20px auto;">
+            <h3 style="margin-top: 30px;">Frontend Development</h3>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%;">HTML5</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%;">CSS3</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%;">JavaScript</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%;">React</div>
+            </div>
+
+            <h3 style="margin-top: 30px;">Backend Development</h3>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%;">Node.js</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 70%;">Python</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 65%;">PHP</div>
+            </div>
+
+            <h3 style="margin-top: 30px;">Tools & Technologies</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;">✅ Git & GitHub</li>
+                <li style="margin-bottom: 10px;">✅ Responsive Design</li>
+                <li style="margin-bottom: 10px;">✅ UI/UX Design</li>
+                <li style="margin-bottom: 10px;">✅ Web Performance Optimization</li>
+                <li style="margin-bottom: 10px;">✅ Docker</li>
+                <li style="margin-bottom: 10px;">✅ AWS</li>
+                <li style="margin-bottom: 10px;">✅ CI/CD</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" style="padding: 60px 20px; background-color: white;">
+        <h2 style="text-align: center;">Work Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Senior Web Developer</h3>
+                <p style="color: #666;">Tech Solutions Inc. | 2020 - Present</p>
+                <ul>
+                    <li>Led development of enterprise web applications</li>
+                    <li>Mentored junior developers</li>
+                    <li>Implemented CI/CD pipelines</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h3>Web Developer</h3>
+                <p style="color: #666;">Digital Creations | 2018 - 2020</p>
+                <ul>
+                    <li>Developed responsive websites for clients</li>
+                    <li>Optimized website performance</li>
+                    <li>Collaborated with design team</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h3>Junior Developer</h3>
+                <p style="color: #666;">Web Solutions | 2016 - 2018</p>
+                <ul>
+                    <li>Built and maintained client websites</li>
+                    <li>Implemented responsive designs</li>
+                    <li>Fixed bugs and improved functionality</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" style="padding: 40px;">
-        <h2>My Projects</h2>
-
-        <div style="background-color: white; padding: 20px; margin-bottom: 20px;">
-            <h3>Portfolio Website</h3>
-            <p>A personal website to showcase my skills, projects, and contact information.</p>
-        </div>
-
-        <div style="background-color: white; padding: 20px; margin-bottom: 20px;">
-            <h3>Blog Platform</h3>
-            <p>A static HTML blog layout for writing and sharing articles with the world.</p>
-        </div>
-
-        <div style="background-color: white; padding: 20px; margin-bottom: 20px;">
-            <h3>Landing Page</h3>
-            <p>A beautiful landing page concept using only HTML for startups or personal brands.</p>
+    <section id="projects" style="padding: 60px 20px; background-color: #f0f0f0;">
+        <h2 style="text-align: center;">Projects</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            <div class="project-card" style="width: 300px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <h3>E-commerce Platform</h3>
+                <p>A full-featured online store with payment integration and inventory management.</p>
+                <p style="color: #666;">Technologies: React, Node.js, MongoDB</p>
+            </div>
+            <div class="project-card" style="width: 300px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <h3>Portfolio Website</h3>
+                <p>A clean personal website to showcase work and resume.</p>
+                <p style="color: #666;">Technologies: HTML5, CSS3, JavaScript</p>
+            </div>
+            <div class="project-card" style="width: 300px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <h3>Blog Platform</h3>
+                <p>A modern blog system with content management.</p>
+                <p style="color: #666;">Technologies: React, Firebase, Tailwind CSS</p>
+            </div>
+            <div class="project-card" style="width: 300px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <h3>Task Management App</h3>
+                <p>A collaborative project management tool.</p>
+                <p style="color: #666;">Technologies: Vue.js, Express, PostgreSQL</p>
+            </div>
+            <div class="project-card" style="width: 300px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <h3>Weather Dashboard</h3>
+                <p>Real-time weather information display.</p>
+                <p style="color: #666;">Technologies: JavaScript, OpenWeather API</p>
+            </div>
+            <div class="project-card" style="width: 300px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <h3>Fitness Tracker</h3>
+                <p>Personal fitness and workout tracking application.</p>
+                <p style="color: #666;">Technologies: React Native, Firebase</p>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" style="padding: 40px; background-color: white;">
-        <h2>Contact Me</h2>
-        <p>You can reach out via the following channels:</p>
-        <ul>
-            <li>Email: yourname@example.com</li>
-            <li>Phone: +123-456-7890</li>
-            <li>Location: Your City, Country</li>
-        </ul>
+    <!-- Testimonials -->
+    <section id="testimonials" style="padding: 60px 20px; background-color: white;">
+        <h2 style="text-align: center;">Testimonials</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <blockquote style="max-width: 600px; margin: 20px auto; font-style: italic; text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                "John is a talented developer who delivered our website on time and beyond expectations. His attention to detail and problem-solving skills are exceptional."
+                <br><br>
+                — Sarah Johnson, CEO at TechStart
+            </blockquote>
+            <blockquote style="max-width: 600px; margin: 20px auto; font-style: italic; text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                "Highly recommended! Great communication and design sense. John transformed our online presence completely."
+                <br><br>
+                — Michael Chen, Marketing Director at InnovateCo
+            </blockquote>
+            <blockquote style="max-width: 600px; margin: 20px auto; font-style: italic; text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                "Working with John was a pleasure. He understood our requirements perfectly and delivered a website that exceeded our expectations."
+                <br><br>
+                — Emily Rodriguez, Founder of CreativeMinds
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" style="padding: 60px 20px; background-color: #f0f0f0;">
+        <h2 style="text-align: center;">Contact Me</h2>
+        <div style="max-width: 600px; margin: 20px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);" class="animate">
+            <form>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 5px;">Your Name</label>
+                    <input type="text" placeholder="Enter your name" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 5px;">Your Email</label>
+                    <input type="email" placeholder="Enter your email" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 5px;">Subject</label>
+                    <input type="text" placeholder="Enter subject" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 5px;">Your Message</label>
+                    <textarea placeholder="Enter your message" rows="5" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                </div>
+                <button type="submit" style="width: 100%; padding: 12px; background: linear-gradient(135deg, #6e8efb, #a777e3); color: white; border: none; border-radius: 4px; cursor: pointer; transition: transform 0.3s ease;">Send Message</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer style="background-color: #333; color: white; text-align: center; padding: 20px;">
-        <p>&copy; 2025 My Simple Website. All rights reserved.</p>
+    <footer style="background-color: #333; color: white; text-align: center; padding: 40px 20px;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="margin-bottom: 20px;">&copy; 2025 John Doe. All rights reserved.</p>
+            <div style="margin-bottom: 20px;">
+                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">LinkedIn</a>
+                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">GitHub</a>
+                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Twitter</a>
+                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Instagram</a>
+            </div>
+            <p style="font-size: 14px; color: #aaa;">
+                Designed and developed with ❤️ by John Doe
+            </p>
+        </div>
     </footer>
-  <section style="background: linear-gradient(135deg, #6e8efb, #a777e3); color: white; padding: 80px 20px; text-align: center;">
-    <h1 style="font-size: 48px; margin-bottom: 10px;">Hi, I'm John Doe</h1>
-    <p style="font-size: 20px; margin-bottom: 30px;">Web Developer | Designer | Freelancer</p>
-    <a href="#projects" style="background: white; color: #6e8efb; padding: 12px 24px; border-radius: 5px; text-decoration: none;">View My Work</a>
-  </section>
 
-  <!-- About Section -->
-  <section id="about" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">About Me</h2>
-    <p style="max-width: 800px; margin: 20px auto; text-align: center;">
-      I'm a self-taught web developer with a passion for building responsive and engaging websites.
-      I specialize in front-end development, design, and performance optimization.
-    </p>
-  </section>
-
-  <!-- Skills Section -->
-  <section style="padding: 60px 20px; background-color: #f0f0f0;">
-    <h2 style="text-align: center;">My Skills</h2>
-    <ul style="max-width: 600px; margin: 20px auto; list-style: none; padding: 0;">
-      <li style="margin-bottom: 10px;">✅ HTML5, CSS3, JavaScript</li>
-      <li style="margin-bottom: 10px;">✅ Responsive Design</li>
-      <li style="margin-bottom: 10px;">✅ UI/UX Design</li>
-      <li style="margin-bottom: 10px;">✅ Web Performance Optimization</li>
-    </ul>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">Projects</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Portfolio Website</h3>
-        <p>A clean personal website to showcase your work and resume.</p>
-      </div>
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Landing Page</h3>
-        <p>Marketing landing page built for a product launch.</p>
-      </div>
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Blog Layout</h3>
-        <p>A minimalist blog interface for publishing articles.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section style="padding: 60px 20px; background-color: #f0f0f0;">
-    <h2 style="text-align: center;">Testimonials</h2>
-    <blockquote style="max-width: 600px; margin: 20px auto; font-style: italic; text-align: center;">
-      “John is a talented developer who delivered our website on time and beyond expectations.”<br>
-      — Client A
-    </blockquote>
-    <blockquote style="max-width: 600px; margin: 20px auto; font-style: italic; text-align: center;">
-      “Highly recommended! Great communication and design sense.”<br>
-      — Client B
-    </blockquote>
-  </section>
-
-  <!-- Contact Form (Visual Only) -->
-  <section id="contact" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">Contact Me</h2>
-    <form style="max-width: 600px; margin: 20px auto;">
-      <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px; margin-bottom: 10px;"><br>
-      <input type="email" placeholder="Your Email" style="width: 100%; padding: 12px; margin-bottom: 10px;"><br>
-      <textarea placeholder="Your Message" rows="5" style="width: 100%; padding: 12px; margin-bottom: 10px;"></textarea><br>
-      <input type="submit" value="Send Message" style="padding: 12px 24px; background-color: #6e8efb; color: white; border: none; border-radius: 5px;">
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer style="background-color: #333; color: white; text-align: center; padding: 20px;">
-    <p>&copy; 2025 John Doe. All rights reserved.</p>
-    <p>
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">LinkedIn</a> |
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">GitHub</a> |
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Twitter</a>
-    </p>
-  </footer>
-    <section style="background: linear-gradient(135deg, #6e8efb, #a777e3); color: white; padding: 80px 20px; text-align: center;">
-    <h1 style="font-size: 48px; margin-bottom: 10px;">Hi, I'm John Doe</h1>
-    <p style="font-size: 20px; margin-bottom: 30px;">Web Developer | Designer | Freelancer</p>
-    <a href="#projects" style="background: white; color: #6e8efb; padding: 12px 24px; border-radius: 5px; text-decoration: none;">View My Work</a>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">About Me</h2>
-    <p style="max-width: 800px; margin: 20px auto; text-align: center;">
-      I'm a self-taught web developer with a passion for building responsive and engaging websites.
-      I specialize in front-end development, design, and performance optimization.
-    </p>
-  </section>
-
-  <!-- Skills Section -->
-  <section style="padding: 60px 20px; background-color: #f0f0f0;">
-    <h2 style="text-align: center;">My Skills</h2>
-    <ul style="max-width: 600px; margin: 20px auto; list-style: none; padding: 0;">
-      <li style="margin-bottom: 10px;">✅ HTML5, CSS3, JavaScript</li>
-      <li style="margin-bottom: 10px;">✅ Responsive Design</li>
-      <li style="margin-bottom: 10px;">✅ UI/UX Design</li>
-      <li style="margin-bottom: 10px;">✅ Web Performance Optimization</li>
-    </ul>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">Projects</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Portfolio Website</h3>
-        <p>A clean personal website to showcase your work and resume.</p>
-      </div>
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Landing Page</h3>
-        <p>Marketing landing page built for a product launch.</p>
-      </div>
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Blog Layout</h3>
-        <p>A minimalist blog interface for publishing articles.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section style="padding: 60px 20px; background-color: #f0f0f0;">
-    <h2 style="text-align: center;">Testimonials</h2>
-    <blockquote style="max-width: 600px; margin: 20px auto; font-style: italic; text-align: center;">
-      “John is a talented developer who delivered our website on time and beyond expectations.”<br>
-      — Client A
-    </blockquote>
-    <blockquote style="max-width: 600px; margin: 20px auto; font-style: italic; text-align: center;">
-      “Highly recommended! Great communication and design sense.”<br>
-      — Client B
-    </blockquote>
-  </section>
-
-  <!-- Contact Form (Visual Only) -->
-  <section id="contact" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">Contact Me</h2>
-    <form style="max-width: 600px; margin: 20px auto;">
-      <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px; margin-bottom: 10px;"><br>
-      <input type="email" placeholder="Your Email" style="width: 100%; padding: 12px; margin-bottom: 10px;"><br>
-      <textarea placeholder="Your Message" rows="5" style="width: 100%; padding: 12px; margin-bottom: 10px;"></textarea><br>
-      <input type="submit" value="Send Message" style="padding: 12px 24px; background-color: #6e8efb; color: white; border: none; border-radius: 5px;">
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer style="background-color: #333; color: white; text-align: center; padding: 20px;">
-    <p>&copy; 2025 John Doe. All rights reserved.</p>
-    <p>
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">LinkedIn</a> |
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">GitHub</a> |
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Twitter</a>
-    </p>
-  </footer>
-    <section style="background: linear-gradient(135deg, #6e8efb, #a777e3); color: white; padding: 80px 20px; text-align: center;">
-    <h1 style="font-size: 48px; margin-bottom: 10px;">Hi, I'm John Doe</h1>
-    <p style="font-size: 20px; margin-bottom: 30px;">Web Developer | Designer | Freelancer</p>
-    <a href="#projects" style="background: white; color: #6e8efb; padding: 12px 24px; border-radius: 5px; text-decoration: none;">View My Work</a>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">About Me</h2>
-    <p style="max-width: 800px; margin: 20px auto; text-align: center;">
-      I'm a self-taught web developer with a passion for building responsive and engaging websites.
-      I specialize in front-end development, design, and performance optimization.
-    </p>
-  </section>
-
-  <!-- Skills Section -->
-  <section style="padding: 60px 20px; background-color: #f0f0f0;">
-    <h2 style="text-align: center;">My Skills</h2>
-    <ul style="max-width: 600px; margin: 20px auto; list-style: none; padding: 0;">
-      <li style="margin-bottom: 10px;">✅ HTML5, CSS3, JavaScript</li>
-      <li style="margin-bottom: 10px;">✅ Responsive Design</li>
-      <li style="margin-bottom: 10px;">✅ UI/UX Design</li>
-      <li style="margin-bottom: 10px;">✅ Web Performance Optimization</li>
-    </ul>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">Projects</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Portfolio Website</h3>
-        <p>A clean personal website to showcase your work and resume.</p>
-      </div>
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Landing Page</h3>
-        <p>Marketing landing page built for a product launch.</p>
-      </div>
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Blog Layout</h3>
-        <p>A minimalist blog interface for publishing articles.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section style="padding: 60px 20px; background-color: #f0f0f0;">
-    <h2 style="text-align: center;">Testimonials</h2>
-    <blockquote style="max-width: 600px; margin: 20px auto; font-style: italic; text-align: center;">
-      “John is a talented developer who delivered our website on time and beyond expectations.”<br>
-      — Client A
-    </blockquote>
-    <blockquote style="max-width: 600px; margin: 20px auto; font-style: italic; text-align: center;">
-      “Highly recommended! Great communication and design sense.”<br>
-      — Client B
-    </blockquote>
-  </section>
-
-  <!-- Contact Form (Visual Only) -->
-  <section id="contact" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">Contact Me</h2>
-    <form style="max-width: 600px; margin: 20px auto;">
-      <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px; margin-bottom: 10px;"><br>
-      <input type="email" placeholder="Your Email" style="width: 100%; padding: 12px; margin-bottom: 10px;"><br>
-      <textarea placeholder="Your Message" rows="5" style="width: 100%; padding: 12px; margin-bottom: 10px;"></textarea><br>
-      <input type="submit" value="Send Message" style="padding: 12px 24px; background-color: #6e8efb; color: white; border: none; border-radius: 5px;">
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer style="background-color: #333; color: white; text-align: center; padding: 20px;">
-    <p>&copy; 2025 John Doe. All rights reserved.</p>
-    <p>
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">LinkedIn</a> |
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">GitHub</a> |
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Twitter</a>
-    </p>
-  </footer>
-    <section style="background: linear-gradient(135deg, #6e8efb, #a777e3); color: white; padding: 80px 20px; text-align: center;">
-    <h1 style="font-size: 48px; margin-bottom: 10px;">Hi, I'm John Doe</h1>
-    <p style="font-size: 20px; margin-bottom: 30px;">Web Developer | Designer | Freelancer</p>
-    <a href="#projects" style="background: white; color: #6e8efb; padding: 12px 24px; border-radius: 5px; text-decoration: none;">View My Work</a>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">About Me</h2>
-    <p style="max-width: 800px; margin: 20px auto; text-align: center;">
-      I'm a self-taught web developer with a passion for building responsive and engaging websites.
-      I specialize in front-end development, design, and performance optimization.
-    </p>
-  </section>
-
-  <!-- Skills Section -->
-  <section style="padding: 60px 20px; background-color: #f0f0f0;">
-    <h2 style="text-align: center;">My Skills</h2>
-    <ul style="max-width: 600px; margin: 20px auto; list-style: none; padding: 0;">
-      <li style="margin-bottom: 10px;">✅ HTML5, CSS3, JavaScript</li>
-      <li style="margin-bottom: 10px;">✅ Responsive Design</li>
-      <li style="margin-bottom: 10px;">✅ UI/UX Design</li>
-      <li style="margin-bottom: 10px;">✅ Web Performance Optimization</li>
-    </ul>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">Projects</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Portfolio Website</h3>
-        <p>A clean personal website to showcase your work and resume.</p>
-      </div>
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Landing Page</h3>
-        <p>Marketing landing page built for a product launch.</p>
-      </div>
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Blog Layout</h3>
-        <p>A minimalist blog interface for publishing articles.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section style="padding: 60px 20px; background-color: #f0f0f0;">
-    <h2 style="text-align: center;">Testimonials</h2>
-    <blockquote style="max-width: 600px; margin: 20px auto; font-style: italic; text-align: center;">
-      “John is a talented developer who delivered our website on time and beyond expectations.”<br>
-      — Client A
-    </blockquote>
-    <blockquote style="max-width: 600px; margin: 20px auto; font-style: italic; text-align: center;">
-      “Highly recommended! Great communication and design sense.”<br>
-      — Client B
-    </blockquote>
-  </section>
-
-  <!-- Contact Form (Visual Only) -->
-  <section id="contact" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">Contact Me</h2>
-    <form style="max-width: 600px; margin: 20px auto;">
-      <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px; margin-bottom: 10px;"><br>
-      <input type="email" placeholder="Your Email" style="width: 100%; padding: 12px; margin-bottom: 10px;"><br>
-      <textarea placeholder="Your Message" rows="5" style="width: 100%; padding: 12px; margin-bottom: 10px;"></textarea><br>
-      <input type="submit" value="Send Message" style="padding: 12px 24px; background-color: #6e8efb; color: white; border: none; border-radius: 5px;">
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer style="background-color: #333; color: white; text-align: center; padding: 20px;">
-    <p>&copy; 2025 John Doe. All rights reserved.</p>
-    <p>
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">LinkedIn</a> |
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">GitHub</a> |
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Twitter</a>
-    </p>
-  </footer>
-    <section style="background: linear-gradient(135deg, #6e8efb, #a777e3); color: white; padding: 80px 20px; text-align: center;">
-    <h1 style="font-size: 48px; margin-bottom: 10px;">Hi, I'm John Doe</h1>
-    <p style="font-size: 20px; margin-bottom: 30px;">Web Developer | Designer | Freelancer</p>
-    <a href="#projects" style="background: white; color: #6e8efb; padding: 12px 24px; border-radius: 5px; text-decoration: none;">View My Work</a>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">About Me</h2>
-    <p style="max-width: 800px; margin: 20px auto; text-align: center;">
-      I'm a self-taught web developer with a passion for building responsive and engaging websites.
-      I specialize in front-end development, design, and performance optimization.
-    </p>
-  </section>
-
-  <!-- Skills Section -->
-  <section style="padding: 60px 20px; background-color: #f0f0f0;">
-    <h2 style="text-align: center;">My Skills</h2>
-    <ul style="max-width: 600px; margin: 20px auto; list-style: none; padding: 0;">
-      <li style="margin-bottom: 10px;">✅ HTML5, CSS3, JavaScript</li>
-      <li style="margin-bottom: 10px;">✅ Responsive Design</li>
-      <li style="margin-bottom: 10px;">✅ UI/UX Design</li>
-      <li style="margin-bottom: 10px;">✅ Web Performance Optimization</li>
-    </ul>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">Projects</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Portfolio Website</h3>
-        <p>A clean personal website to showcase your work and resume.</p>
-      </div>
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Landing Page</h3>
-        <p>Marketing landing page built for a product launch.</p>
-      </div>
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Blog Layout</h3>
-        <p>A minimalist blog interface for publishing articles.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section style="padding: 60px 20px; background-color: #f0f0f0;">
-    <h2 style="text-align: center;">Testimonials</h2>
-    <blockquote style="max-width: 600px; margin: 20px auto; font-style: italic; text-align: center;">
-      “John is a talented developer who delivered our website on time and beyond expectations.”<br>
-      — Client A
-    </blockquote>
-    <blockquote style="max-width: 600px; margin: 20px auto; font-style: italic; text-align: center;">
-      “Highly recommended! Great communication and design sense.”<br>
-      — Client B
-    </blockquote>
-  </section>
-
-  <!-- Contact Form (Visual Only) -->
-  <section id="contact" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">Contact Me</h2>
-    <form style="max-width: 600px; margin: 20px auto;">
-      <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px; margin-bottom: 10px;"><br>
-      <input type="email" placeholder="Your Email" style="width: 100%; padding: 12px; margin-bottom: 10px;"><br>
-      <textarea placeholder="Your Message" rows="5" style="width: 100%; padding: 12px; margin-bottom: 10px;"></textarea><br>
-      <input type="submit" value="Send Message" style="padding: 12px 24px; background-color: #6e8efb; color: white; border: none; border-radius: 5px;">
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer style="background-color: #333; color: white; text-align: center; padding: 20px;">
-    <p>&copy; 2025 John Doe. All rights reserved.</p>
-    <p>
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">LinkedIn</a> |
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">GitHub</a> |
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Twitter</a>
-    </p>
-  </footer>
-    <section style="background: linear-gradient(135deg, #6e8efb, #a777e3); color: white; padding: 80px 20px; text-align: center;">
-    <h1 style="font-size: 48px; margin-bottom: 10px;">Hi, I'm John Doe</h1>
-    <p style="font-size: 20px; margin-bottom: 30px;">Web Developer | Designer | Freelancer</p>
-    <a href="#projects" style="background: white; color: #6e8efb; padding: 12px 24px; border-radius: 5px; text-decoration: none;">View My Work</a>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">About Me</h2>
-    <p style="max-width: 800px; margin: 20px auto; text-align: center;">
-      I'm a self-taught web developer with a passion for building responsive and engaging websites.
-      I specialize in front-end development, design, and performance optimization.
-    </p>
-  </section>
-
-  <!-- Skills Section -->
-  <section style="padding: 60px 20px; background-color: #f0f0f0;">
-    <h2 style="text-align: center;">My Skills</h2>
-    <ul style="max-width: 600px; margin: 20px auto; list-style: none; padding: 0;">
-      <li style="margin-bottom: 10px;">✅ HTML5, CSS3, JavaScript</li>
-      <li style="margin-bottom: 10px;">✅ Responsive Design</li>
-      <li style="margin-bottom: 10px;">✅ UI/UX Design</li>
-      <li style="margin-bottom: 10px;">✅ Web Performance Optimization</li>
-    </ul>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">Projects</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Portfolio Website</h3>
-        <p>A clean personal website to showcase your work and resume.</p>
-      </div>
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Landing Page</h3>
-        <p>Marketing landing page built for a product launch.</p>
-      </div>
-      <div style="width: 280px; margin: 10px; padding: 20px; background: #f7f7f7; border-radius: 8px;">
-        <h3>Blog Layout</h3>
-        <p>A minimalist blog interface for publishing articles.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section style="padding: 60px 20px; background-color: #f0f0f0;">
-    <h2 style="text-align: center;">Testimonials</h2>
-    <blockquote style="max-width: 600px; margin: 20px auto; font-style: italic; text-align: center;">
-      “John is a talented developer who delivered our website on time and beyond expectations.”<br>
-      — Client A
-    </blockquote>
-    <blockquote style="max-width: 600px; margin: 20px auto; font-style: italic; text-align: center;">
-      “Highly recommended! Great communication and design sense.”<br>
-      — Client B
-    </blockquote>
-  </section>
-
-  <!-- Contact Form (Visual Only) -->
-  <section id="contact" style="padding: 60px 20px; background-color: white;">
-    <h2 style="text-align: center;">Contact Me</h2>
-    <form style="max-width: 600px; margin: 20px auto;">
-      <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px; margin-bottom: 10px;"><br>
-      <input type="email" placeholder="Your Email" style="width: 100%; padding: 12px; margin-bottom: 10px;"><br>
-      <textarea placeholder="Your Message" rows="5" style="width: 100%; padding: 12px; margin-bottom: 10px;"></textarea><br>
-      <input type="submit" value="Send Message" style="padding: 12px 24px; background-color: #6e8efb; color: white; border: none; border-radius: 5px;">
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer style="background-color: #333; color: white; text-align: center; padding: 20px;">
-    <p>&copy; 2025 John Doe. All rights reserved.</p>
-    <p>
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">LinkedIn</a> |
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">GitHub</a> |
-      <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Twitter</a>
-    </p>
-  </footer>
-  
 </body>
 </html>
